@@ -22,9 +22,10 @@ class MainPage(webapp2.RequestHandler):
     
     def get(self):
         self.response.headers['Content-Type'] = 'application/json'
+        
         ratio =  0.0
         for i in range(1,10000001):
-            ratio += pow(-1,i+1)/float((2*i-1))
+            ratio = ratio + pow(-1,i+1)/float((2*i-1))
         
         res = {
             'value': ratio
